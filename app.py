@@ -202,33 +202,6 @@ if chosen_model and "base_url" in st.session_state:
                 st.session_state.messages[current_assistant_message_idx]["content"] = collected_text
                 save_chat_history(st.session_state.messages)
 
-                # Read More block immediately for new response
-                toggle_key = f"read_more_{current_assistant_message_idx}"
-                if toggle_key not in st.session_state:
-                    st.session_state[toggle_key] = False
-                words = collected_text.split()
-                if len(words) > 50 and not st.session_state[toggle_key]:
-                    st.markdown(get_truncated_text(collected_text, 50))
-                else:
-                    st.markdown(collected_text)
-
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    if len(words) > 50:
-                        label = "Read More" if not st.session_state[toggle_key] else "Show Less"
-                        if st.button(label, key=f"toggle_{current_assistant_message_idx}"):
-                            st.session_state[toggle_key] = not st.session_state[toggle_key]
-                            st.rerun()
-                with col2:
-                    if st.button("Copy Output", key=f"copy_{current_assistant_message_idx}_final"):
-                        copy_to_clipboard(collected_text)
-                with col3:
-                    if st.button("🗑️ Delete Response", key=f"delete_{current_assistant_message_idx}_final"):
-                        st.session_state.messages.pop(current_assistant_message_idx)
-                        st.session_state.messages.pop(current_assistant_message_idx - 1)
-                        save_chat_history(st.session_state.messages)
-                        st.rerun()
-
 elif "model_list" not in st.session_state:
     st.info("👈 Use the sidebar to enter your credentials and load available models.")
 else:
