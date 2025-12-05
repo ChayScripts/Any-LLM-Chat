@@ -72,7 +72,7 @@ This will open the application in your default web browser.
         
     *For remote Ollama servers, use the server's FQDN or IP address in the API URL. Refer to the [Ollama guide for Windows](https://www.techwithchay.com/posts/ollama-guide-for-windows/#remote-deployment) to configure `OLLAMA_HOST` for remote connections.*
 
-2.  **API Key**: If your chosen provider requires an API key (e.g., OpenAI), enter it in the "API Key" field. For local Ollama instances, an API key is not needed.
+2.  **API Key**: Under "Select Settings or Chat Below:" option, select settings option, enter API URL, API key and save. If needed, enter custom "System Instructions" and save. For local Ollama instances, an API key is not needed. Once done, select "Chat" option under "Select Settings or Chat Below:" option.
 
 3.  **List / Refresh Models**: Click the "List / Refresh Models" button. The application will fetch and display available models from your specified endpoint.
 
