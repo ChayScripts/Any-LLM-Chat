@@ -16,6 +16,10 @@ A versatile Streamlit application designed for seamless interaction with various
       * **Delete Messages**: Remove individual user/assistant message pairs from the history.
   * **Streaming Responses**: Enjoy real-time text generation as the LLM responds.
   * **Stop Generation**: Ability to halt ongoing AI responses at any time, helping you save on token usage and costs.
+  * **New Chat**: Start new chats if your queries exceed LLM token limits.
+  * **Save Chat History**: Persist conversations across sessions for easy reference and continuity.
+  * **API URL & Key**: Store custom API endpoints and key locally on disk for seamless integrations — no privacy concerns as data remains on your device.
+  * **System Instructions**: Define your custom instructions that you want LLM to follow on every chat.
 
 -----
 
